@@ -1,0 +1,11 @@
+
+dependency-reduced-pom.xml
+.idea/vcs.xml
+.idea/runConfigurations.xml
+.idea/misc.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/aws.xml
+.idea/.name
+.aws-sam/temp-template.yaml
+.idea/vcs.xml

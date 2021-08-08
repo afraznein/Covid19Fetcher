@@ -15,6 +15,7 @@ public class WebScraper {
     public static String tableScrapper() {
         StringBuilder message = new StringBuilder();
         try (final WebClient webClient = new WebClient(BrowserVersion.CHROME)) {
+            webClient.setThrowExceptionOnScriptError(false);
             HtmlPage page = webClient.getPage(LambdaAWSConstants.COVID_19_TABLE_URL);
             //String stringHtmlPage = page.asXml();
             //HtmlTable table = page.getElementByName(LambdaAWSConstants.COVID_19_TABLE_CLASS);
