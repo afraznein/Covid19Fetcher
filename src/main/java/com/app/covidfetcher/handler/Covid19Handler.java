@@ -10,6 +10,7 @@ public class Covid19Handler implements RequestHandler<ScheduledEvent, String> {
 
     @Override
     public String handleRequest(ScheduledEvent input, Context context) {
+        System.out.println("Starting Lambda");
         //Get Covid Table Data
         String message = WebScraper.tableScrapper();
         //Email result
