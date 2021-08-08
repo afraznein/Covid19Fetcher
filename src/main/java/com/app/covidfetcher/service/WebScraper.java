@@ -7,6 +7,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTable;
 import com.gargoylesoftware.htmlunit.html.HtmlTableCell;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
+import org.joda.time.LocalDate;
 
 import java.io.IOException;
 
@@ -14,15 +15,15 @@ public class WebScraper {
 
     public static String tableScrapper() {
         StringBuilder message = new StringBuilder();
+        LocalDate today = LocalDate.now();
+        message.append("South Carolina Covid 19 Data for " + today + "\n");
         try (final WebClient webClient = new WebClient(BrowserVersion.CHROME)) {
-            webClient.setThrowExceptionOnScriptError(false);
             HtmlPage page = webClient.getPage(LambdaAWSConstants.COVID_19_TABLE_URL);
-            //String stringHtmlPage = page.asXml();
-            //HtmlTable table = page.getElementByName(LambdaAWSConstants.COVID_19_TABLE_CLASS);
-            final HtmlTable table = page.getFirstByXPath("//table[@class ='"+LambdaAWSConstants.COVID_19_TABLE_CLASS +"']");
+            final HtmlTable table = page.getFirstByXPath("//table[@class ='" + LambdaAWSConstants.COVID_19_TABLE_CLASS + "']");
             for (final HtmlTableRow row : table.getRows()) {
                 for (final HtmlTableCell cell : row.getCells()) {
                     message.append(cell.asNormalizedText());
+                    message.append("\t");
                 }
                 message.append("\n");
             }

@@ -11,7 +11,7 @@ import software.amazon.awssdk.services.sns.model.SnsException;
 
 public class EmailService {
 
-    private static SnsClient createSNSClient(){
+    private static SnsClient createSNSClient() {
         return SnsClient.builder()
                 .region(Region.US_EAST_2)
                 .credentialsProvider(EnvironmentVariableCredentialsProvider.create())
@@ -33,7 +33,7 @@ public class EmailService {
         }
     }
 
-    public static void sendCovid19Email(String message){
+    public static void sendCovid19Email(String message) {
         sendEmail(message, LambdaAWSConstants.COVID_19_TOPIC_ARN);
     }
 }

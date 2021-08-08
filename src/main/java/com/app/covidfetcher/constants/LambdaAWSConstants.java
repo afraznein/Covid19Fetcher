@@ -5,5 +5,4 @@ public class LambdaAWSConstants {
     public static final String COVID_19_PDF_URL = "https://scdhec.gov/sites/default/files/media/document/COVID-19-Case-Summary-";
     public static final String COVID_19_TABLE_URL = "https://scdhec.gov/covid19";
     public static final String COVID_19_TABLE_CLASS = "rg-table";
-
 }
