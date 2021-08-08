@@ -11,9 +11,9 @@ import org.joda.time.LocalDate;
 
 import java.io.IOException;
 
-public class WebScraper {
+public class WebScraperService {
 
-    public static String tableScrapper() {
+    public static String parseTable() {
         StringBuilder message = new StringBuilder();
         LocalDate today = LocalDate.now();
         message.append("South Carolina Covid 19 Data for " + today + "\n");
@@ -29,7 +29,7 @@ public class WebScraper {
             }
             return message.toString();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
             return message.toString();
         }
     }
