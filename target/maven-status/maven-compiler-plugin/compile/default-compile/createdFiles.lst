@@ -1,4 +1,0 @@
-com\app\covidfetcher\constants\LambdaAWSConstants.class
-com\app\covidfetcher\handler\Covid19Handler.class
-com\app\covidfetcher\service\EmailService.class
-com\app\covidfetcher\service\WebScraper.class
