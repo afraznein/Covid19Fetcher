@@ -1,9 +1,0 @@
-Resources:
-  Function:
-    Type: AWS::Serverless::Function
-    Properties:
-      Timeout: 300
-      MemorySize: 128
-      Handler: com.app.covidfetcher.handler.Covid19Handler
-      CodeUri: N:\Nein_\School_PC\Covid19
-      Runtime: java11
